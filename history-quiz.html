@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz MYE de História</title>
+  <meta name="description" content="Quiz de revisão de História Geral e História do Brasil com correção imediata." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/history-quiz.css" />
+</head>
+<body>
+  <main class="quiz-shell">
+    <section class="topbar" aria-label="Resumo do quiz">
+      <div>
+        <p class="eyebrow">Escola Eleva | 9º Série</p>
+        <h1>História Geral + História do Brasil</h1>
+      </div>
+      <div class="top-actions">
+        <button class="ghost-button" id="shuffleBtn" type="button">Embaralhar</button>
+        <button class="danger-button" id="resetBtn" type="button">Reiniciar</button>
+      </div>
+    </section>
+
+    <section class="metrics-grid" aria-label="Métricas de desempenho">
+      <article class="metric">
+        <span>Nota</span>
+        <strong id="scoreValue">0%</strong>
+      </article>
+      <article class="metric">
+        <span>Respondidas</span>
+        <strong id="answeredValue">0 / 0</strong>
+      </article>
+      <article class="metric">
+        <span>Pontos</span>
+        <strong id="pointsValue">0</strong>
+      </article>
+      <article class="metric">
+        <span>Sequência</span>
+        <strong id="streakValue">0</strong>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <aside class="sidebar" aria-label="Controles e diagnóstico">
+        <label class="control-label" for="topicFilter">Tema</label>
+        <select id="topicFilter"></select>
+
+        <label class="control-label" for="modeFilter">Modo</label>
+        <select id="modeFilter">
+          <option value="all">Todas as questões</option>
+          <option value="unanswered">Somente não respondidas</option>
+          <option value="missed">Questões com erro parcial/total</option>
+        </select>
+
+        <div class="progress-block">
+          <div class="progress-track"><div id="progressFill"></div></div>
+          <p id="progressText">Seu progresso aparecerá aqui.</p>
+        </div>
+
+        <div class="diagnosis">
+          <h2>Diagnóstico</h2>
+          <div id="diagnosisList"></div>
+        </div>
+      </aside>
+
+      <section class="question-panel" aria-live="polite">
+        <div class="question-meta">
+          <span id="questionNumber">Questão 1</span>
+          <span id="questionTopic">Tema</span>
+          <span id="questionDifficulty">Média</span>
+        </div>
+        <h2 id="questionPrompt"></h2>
+        <form id="answerForm">
+          <div id="answerArea"></div>
+          <button class="primary-button" id="submitBtn" type="submit">Enviar resposta</button>
+        </form>
+        <div class="feedback" id="feedbackPanel" hidden></div>
+        <div class="nav-row">
+          <button class="ghost-button" id="prevBtn" type="button">Anterior</button>
+          <button class="ghost-button" id="nextBtn" type="button">Próxima</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="data/history-midyear-question-bank.js"></script>
+  <script src="js/history-quiz.js"></script>
+</body>
+</html>

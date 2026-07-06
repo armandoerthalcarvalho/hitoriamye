@@ -1,0 +1,15 @@
+@import url("language-arts-quiz.css");
+
+:root {
+  --bg: #120d09;
+  --panel: #1d1712;
+  --panel-2: #2a2119;
+  --line: #4a3726;
+  --text: #fff7ed;
+  --muted: #c8b8a3;
+  --accent: #e0b15b;
+  --accent-2: #e06f5b;
+  --warn: #f5c451;
+  --bad: #ff6b6b;
+  --good: #8bd47a;
+}
